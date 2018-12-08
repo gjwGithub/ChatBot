@@ -189,7 +189,7 @@ app.get('/webhook', (req, res) => {
 
 // Creates the endpoint for our webhook 
 app.post('/webhook', (req, res) => {  
- 
+  console.log("POST");
   let body = req.body;
   let sqlsender=null;
   let sqltimestamp=null;
