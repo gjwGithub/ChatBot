@@ -3,7 +3,7 @@
 // Wit.AI
 let Wit = require('node-wit').Wit
 let log = require('node-wit').log
-const UserID = 2553286658045470;
+const UserID = 1923707044410542;
 const WitToken = 'RRAEVMQZPZNVJ6P3X4XJMOT6SZTH3ONL'
 
 // This will contain all user sessions.
@@ -189,7 +189,6 @@ app.get('/webhook', (req, res) => {
 
 // Creates the endpoint for our webhook 
 app.post('/webhook', (req, res) => {  
-  console.log("POST");
   let body = req.body;
   let sqlsender=null;
   let sqltimestamp=null;
@@ -201,7 +200,6 @@ app.post('/webhook', (req, res) => {
     for (let i = 0; i < messaging_events.length; i++) {
       let event = req.body.entry[0].messaging[i]
       let sender = event.sender.id
-      console.log(""+sender);
       if(sender != UserID) {
         continue;
       }
